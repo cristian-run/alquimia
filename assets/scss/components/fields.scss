@@ -1,0 +1,195 @@
+.form__group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    @media (max-width: 578px) {
+        margin-bottom: 8px;
+    }
+    &.file_type {
+        color: #4d4d4d;
+        display: flex;
+        align-items: center;
+        border: none;
+        input {
+            opacity: 0;
+            position: absolute;
+            outline: none;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            &:focus + .form__field {
+                border-color: var(--ff-yellow);
+                .form__label {
+                    font-size: 1rem;
+                    color: #4d4d4d;
+                    font-weight: 700;
+                    background: $blue;
+                    padding: 0 6px;
+                }
+            }
+        }
+        .form__label {
+            &::after {
+                content: '(opcional)';
+                margin-left: 4px;
+                font-size: 12px;
+                font-weight: 100;
+            }
+        }
+        .form__field {
+            padding: 0;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            &:active {
+                border-color: var(--ff-yellow);
+            }
+            &.file_loaded {
+                .form__label {
+                    font-size: 16px;
+                    cursor: text;
+                    top: 3px;
+                    left: 10px;
+                }
+                p {
+                    color: #4d4d4d;
+                }
+            }
+            &:not(.file_loaded) {
+                p {
+                    color: transparent;
+                }
+                .form__label {
+                    top: 28px;
+                    left: 15px;
+                    font-weight: 400;
+                    color: rgb(149, 149, 149);
+                }
+            }
+        }
+
+        p {
+            padding: 7px 14px;
+            margin-bottom: 0;
+            font-size: 16px;
+            text-align: left;
+            width: 100%;
+            outline: 0;
+        }
+    }
+}
+
+.form_message {
+    color: red;
+}
+
+.form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 2px solid #e6e6e6;
+    outline: 0;
+    min-height: 50px;
+    color: #4d4d4d;
+    padding: 7px 14px;
+    background: transparent;
+    transition: border-color 0.2s;
+    border-radius: 5px;
+    &:hover {
+        border-color: #ccc;
+    }
+
+    + .form__label {
+        &::after {
+            content: '(opcional)';
+            margin-left: 4px;
+            font-size: 12px;
+            font-weight: 100;
+        }
+    }
+    &:required,
+    &[data-required='true'] {
+        + .form__label {
+            &::after {
+                content: '*';
+                color: red;
+                margin-left: 4px;
+                font-size: 16px;
+            }
+        }
+    }
+    &:invalid {
+        + label {
+            &:before {
+                content: 'Campo Incorrecto';
+                position: absolute;
+                bottom: -60px;
+                font-size: 13px;
+                font-weight: 400;
+                color: red;
+                white-space: nowrap;
+            }
+        }
+    }
+    &:focus {
+        border-color: var(--ff-yellow);
+
+        &:invalid {
+            border-color: red;
+        }
+    }
+    &::placeholder {
+        color: transparent;
+    }
+
+    &:placeholder-shown ~ .form__label {
+        font-size: 16px;
+        cursor: text;
+        top: 28px;
+        left: 15px;
+        font-weight: 400;
+        color: rgb(255, 255, 255);
+    }
+}
+
+.form__label {
+    position: absolute;
+    top: 3px;
+    background: $blue;
+    display: block;
+    transition: 0.2s;
+    font-size: 16px;
+    left: 10px;
+    font-weight: 700;
+    padding: 0 6px;
+    color: #4d4d4d;
+    + p {
+        color: red;
+    }
+}
+
+.form__field:focus {
+    ~ .form__label {
+        position: absolute;
+        top: 3px;
+        left: 10px;
+        display: block;
+        transition: 0.2s;
+        font-size: 1rem;
+        color: #4d4d4d;
+        font-weight: 700;
+        background: $blue;
+        padding: 0 6px;
+    }
+    // padding-bottom: 6px;
+    // border-image-slice: 1;
+}
+/* reset input */
+.form__field {
+    &:required,
+    &:invalid {
+        box-shadow: none;
+    }
+}

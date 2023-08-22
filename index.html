@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Alquimia</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <!-- <link rel="stylesheet" type="text/css" href="css/base.css" /> -->
+    <link rel="stylesheet" type="text/css" href="custom.min.css" />
+  
+  </head>
+  <body class="demo-1 loading">
+    
+    <div id="magic-cursor">
+      <div id="ball"></div>
+    </div>
+    <!-- <svg class="cursor" width="20" height="20" viewBox="0 0 20 20">
+			<circle class="cursor__inner" cx="10" cy="10" r="5"/>
+		</svg> -->
+    <!-- <div id="toastContainer" class="toast-container position-fixed top-0 end-0 p-3"></div> -->
+   
+    <main data-scroll-container id="page-wrapper">
+     
+      <div class="content">
+        <header data-scroll data-scroll-sticky data-scroll-target="#page-wrapper">
+          <nav class="center-vertical justify-content-between w-100">
+            <a class="navbar-brand d-block img-contain" data-value="banner" data-scroll-to href="#banner">
+              <img src="media/images/alquimia_logo_s.svg" alt="" />
+            </a>
+           
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav d-flex">
+                <li class="nav-item" data-scroll>
+                  <a class="nav-link active" data-value="banner" data-scroll-to aria-current="page" href="#banner">Inicio</a>
+                </li>
+                <li class="nav-item" data-scroll>
+                  <a class="nav-link" data-value="nosotros" data-scroll-to href="#nosotros">Nosotros</a>
+                </li>
+                <li class="nav-item" data-scroll>
+                  <a class="nav-link" data-value="servicios" data-scroll-to href="#servicios">Servicios</a>
+                </li>
+                <li class="nav-item" data-scroll>
+                  <a class="nav-link" data-value="contacto" data-scroll-to href="#contacto">Contacto</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </header>
+        <div class="d-flex h-100">
+          <section id="banner"  class="img-fit p-0">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <p class="text-center headline">Transformamos tus datos en</p>
+
+                  <h2 class="text-center">
+                    Soluciones con inteligencia artificial.
+                  </h2>
+                  <div class="center-all">
+                    <button type="button" class="al-btn primary white me-4">
+                      Ver servicios
+                    </button>
+                   <div class="mic">
+                    <button class="mic-fire mic-btn" title="Navegación por voz" id="playButton">
+                      <div class="pulse-lines">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                         <div class="line"></div>
+                      </div>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-microphone" width="35" height="35" viewBox="0 0 24 24" stroke-width="2" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M9 2m0 3a3 3 0 0 1 3 -3h0a3 3 0 0 1 3 3v5a3 3 0 0 1 -3 3h0a3 3 0 0 1 -3 -3z" />
+                        <path d="M5 10a7 7 0 0 0 14 0" />
+                        <path d="M8 21l8 0" />
+                        <path d="M12 17l0 4" />
+                      </svg>
+                    </button>
+                   </div>
+                   <div class="mic-sticky" data-scroll data-scroll-sticky data-scroll-target="#page-wrapper">
+                    <button class="mic-fire mic-btn" title="Navegación por voz" id="playButtonSticky">
+                      <div class="pulse-lines">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                         <div class="line"></div>
+                      </div>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-microphone" width="35" height="35" viewBox="0 0 24 24" stroke-width="2" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M9 2m0 3a3 3 0 0 1 3 -3h0a3 3 0 0 1 3 3v5a3 3 0 0 1 -3 3h0a3 3 0 0 1 -3 -3z" />
+                        <path d="M5 10a7 7 0 0 0 14 0" />
+                        <path d="M8 21l8 0" />
+                        <path d="M12 17l0 4" />
+                      </svg>
+                    </button>
+                   </div>
+                   
+                    <button type="button" class="al-btn primary white outline">
+                      Contactarme
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <video muted loop>
+              <source src="media/video/banner-video.mp4" type="video/mp4" />
+              <!-- <source src="movie.ogg" type="video/ogg"> -->
+              Your browser does not support the video tag.
+            </video>
+            <p class="copy">© 2023 alquimia. Todos los derechos reservados.</p>
+            <p class="scroll-text">
+              Haz Scroll para más
+              <svg
+                width="127"
+                height="2"
+                viewBox="0 0 127 2"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M0 1L127 0.999989" stroke="white" stroke-width="2" />
+              </svg>
+            </p>
+          </section>
+          <section id="nosotros" class="bg-white">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-5">
+                  <h4 class="section-title">
+                    Somos innovadores apasionados por la revolución de la IA
+                  </h4>
+                  <p>
+                    En nuestro equipo, nos apasiona la IA y creemos en su poder
+                    transformador. Trabajamos incansablemente para impulsar la
+                    revolución tecnológica y crear soluciones innovadoras que
+                    cambien el mundo.
+                  </p>
+                </div>
+                <div class="col-md-6 offset-md-1">
+                  <div class="about-group-img">
+                    <div class="img-fit about-img overflow-hidden rounded-3">
+                      <img
+                        src="https://images.unsplash.com/photo-1517181875630-f72350452109?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                        alt=""
+                      />
+                    </div>
+                    <div class="img-fit about-img overflow-hidden rounded-3">
+                      <img
+                        src="https://images.unsplash.com/photo-1603201667141-5a2d4c673378?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1196&q=80"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="servicios" class="bg-white">
+            <h5>
+              <span>Nuestros</span>
+              <span>Servicios</span>
+            </h5>
+            <div class="services-list">
+              <div class="service-card" id="machine">
+                <span>01</span>
+                <a href="#"
+                  ><h2 class="text-white section-title text-center">
+                    Machine learning
+                  </h2></a
+                >
+                <a href="#" class="img-fit">
+                  <img
+                    src="https://images.unsplash.com/photo-1627645835237-0743e52b991f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80"
+                    alt=""
+                  />
+                </a>
+                <a href="#" class="al-btn primary blue"> Saber más </a>
+                <button class="arrow">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    stroke-width="2.5"
+                    stroke="#fff"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M5 12l14 0" />
+                    <path d="M13 18l6 -6" />
+                    <path d="M13 6l6 6" />
+                  </svg>
+                </button>
+              </div>
+              <div class="service-card">
+                <span>02</span>
+                <a href="#"
+                  ><h2 class="text-white section-title text-center">
+                    Deep learning
+                  </h2></a
+                >
+                <a href="#" class="img-fit">
+                  <img
+                    src="https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80"
+                    alt=""
+                  />
+                </a>
+                <a href="#" class="al-btn primary blue"> Saber más </a>
+                <button class="arrow">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    stroke-width="2.5"
+                    stroke="#fff"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M5 12l14 0" />
+                    <path d="M13 18l6 -6" />
+                    <path d="M13 6l6 6" />
+                  </svg>
+                </button>
+              </div>
+              <div class="service-card">
+                <span>03</span>
+                <a href="#"
+                  ><h2 class="text-white section-title text-center">
+                    Desarrollo de software a la medida
+                  </h2></a
+                >
+                <a href="#" class="img-fit">
+                  <img
+                    src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80"
+                    alt=""
+                  />
+                </a>
+                <a href="#" class="al-btn primary blue"> Saber más </a>
+                <button class="arrow">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    stroke-width="2.5"
+                    stroke="#fff"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M5 12l14 0" />
+                    <path d="M13 18l6 -6" />
+                    <path d="M13 6l6 6" />
+                  </svg>
+                </button>
+              </div>
+              <div class="service-card">
+                <span>04</span>
+                <a href="#"
+                  ><h2 class="text-white section-title text-center">
+                    Diseño y desarrollo web y app
+                  </h2></a
+                >
+                <a href="#" class="img-fit">
+                  <img
+                    src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1036&q=80"
+                    alt=""
+                  />
+                </a>
+                <a href="#" class="al-btn primary blue"> Saber más </a>
+                <button class="arrow">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    stroke-width="2.5"
+                    stroke="#fff"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M5 12l14 0" />
+                    <path d="M13 18l6 -6" />
+                    <path d="M13 6l6 6" />
+                  </svg>
+                </button>
+              </div>
+              <div class="service-card" id="hardware">
+                <span>05</span>
+                <a href="#"
+                  ><h2 class="text-white section-title text-center">
+                    Soluciones por hardware
+                  </h2></a
+                >
+                <a href="#" class="img-fit">
+                  <img
+                    src="https://images.unsplash.com/photo-1602837385569-08ac19ec83af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=326&q=80"
+                    alt=""
+                  />
+                </a>
+                <a href="#" class="al-btn primary blue"> Saber más </a>
+                <button class="arrow">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    stroke-width="2.5"
+                    stroke="#fff"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M5 12l14 0" />
+                    <path d="M13 18l6 -6" />
+                    <path d="M13 6l6 6" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </section>
+          <section id="contacto">
+            <div class="container">
+             
+              <div class="row">
+                <div class="col-md-2">
+                  <h4 class="section-title">ESCRÍBENOS</h4>
+                </div>
+                <div class="col-md-10">
+                  <div class="form__group mb-3">
+                    <input
+                      name="user_name"
+                      type="text"
+                      class="form__field"
+                      placeholder="Name"
+                      pattern="[A-Za-z ]+"
+                      id="name"
+                      data-required="true"
+                    />
+                    <label for="name" class="form__label">
+                      Nombre completo
+                    </label>
+                  </div>
+                  <div class="form__group">
+                    <input
+                      name="user_name"
+                      type="text"
+                      class="form__field"
+                      placeholder="Name"
+                      pattern="[A-Za-z ]+"
+                      id="email"
+                      data-required="true"
+                    />
+                    <label for="email" class="form__label">
+                      Correo electrónico
+                    </label>
+                  </div>
+                  <div class="form__group">
+                    <input
+                      name="user_name"
+                      type="text"
+                      class="form__field"
+                      placeholder="Name"
+                      patterteln="[A-Za-z ]+"
+                      id="tel"
+                      data-required="true"
+                    />
+                    <label for="tel" class="form__label">
+                      Teléfono 
+                    </label>
+                  </div>
+                  <div class="form__group">
+                    <input
+                      name="user_name"
+                      type="text"
+                      class="form__field"
+                      placeholder="Name"
+                      pattern="[A-Za-z ]+"
+                      id="product-name"
+                      data-required="true"
+                    />
+                    <label for="product-name" class="form__label">
+                      Nombre de tu producto
+                    </label>
+                  </div>
+                  <p>Al hacer clic en enviar mensaje, indicas que has leído y aceptas los Términos y condiciones.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <!-- <svg class="cursor" width="20" height="20" viewBox="0 0 20 20">
+      <circle class="cursor__inner" cx="10" cy="10" r="5" />
+    </svg> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <script src="assets/js/locomotive-scroll.min.js"></script>
+    
+    <!-- <script type="module" src="assets/js/cursor.js"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script type="module" src="assets/js/voice-nav.js"></script>
+  </body>
+</html>

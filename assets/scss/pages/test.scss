@@ -1,0 +1,312 @@
+.frame {
+  padding: 3rem 5vw;
+  text-align: center;
+  position: relative;
+  z-index: 1000;
+  text-transform: uppercase;
+}
+
+.frame__title {
+  font-size: 1rem;
+  margin: 0 0 1rem;
+  font-weight: 300;
+}
+
+.frame__links {
+  display: inline;
+}
+
+.frame__links a:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.frame__demo {
+  margin: 0 1rem;
+}
+
+.frame__demo--current,
+.frame__demo--current:hover {
+  color: var(--color-text);
+  cursor: default;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 13rem);
+  position: relative;
+  justify-content: flex-start;
+}
+
+.cursor {
+  display: none;
+}
+
+@media screen and (min-width: 53em) {
+  .frame {
+    position: fixed;
+    text-align: left;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    display: grid;
+    align-content: space-between;
+    width: 100%;
+    max-width: none;
+    padding: 1.75rem;
+    pointer-events: none;
+    grid-template-columns: auto 1fr 1fr auto;
+    grid-template-rows: auto;
+    grid-template-areas: "title demos demos links";
+  }
+  .frame__title {
+    margin: 0 4rem 0 0;
+    grid-area: title;
+  }
+  .frame__info {
+    grid-area: info;
+  }
+  .frame__demos {
+    grid-area: demos;
+  }
+  .frame__links {
+    grid-area: links;
+    padding: 0;
+    justify-self: end;
+  }
+  .frame a {
+    pointer-events: auto;
+  }
+  .content {
+    height: 100vh;
+    justify-content: center;
+  }
+}
+
+@media (any-pointer: fine) {
+  .cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    pointer-events: none;
+  }
+
+  .cursor__inner {
+    fill: var(--cursor-fill);
+    stroke: var(--cursor-stroke);
+    stroke-width: var(--cursor-stroke-width);
+    opacity: 0.7;
+  }
+
+  .no-js .cursor {
+    display: none;
+  }
+}
+
+/*! locomotive-scroll v4.0.4 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
+html.has-scroll-smooth {
+  overflow: hidden;
+}
+
+html.has-scroll-dragging {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.has-scroll-smooth body {
+  overflow: hidden;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+  min-height: 100vh;
+}
+
+[data-scroll-direction="horizontal"] [data-scroll-container] {
+//   white-space: nowrap;
+  height: 100vh;
+  display: inline-block;
+}
+
+[data-scroll-direction="horizontal"] [data-scroll-section] {
+  display: inline-block;
+  vertical-align: top;
+//   white-space: nowrap;
+  height: 100%;
+}
+
+.c-scrollbar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 11px;
+  height: 100%;
+  transform-origin: center right;
+  transition: transform 0.3s, opacity 0.3s;
+  opacity: 0;
+}
+.c-scrollbar:hover {
+  transform: scaleX(1.45);
+}
+.c-scrollbar:hover,
+.has-scroll-scrolling .c-scrollbar,
+.has-scroll-dragging .c-scrollbar {
+  opacity: 1;
+}
+[data-scroll-direction="horizontal"] .c-scrollbar {
+  width: 100%;
+  height: 10px;
+  top: auto;
+  bottom: 0;
+  transform: scaleY(1);
+}
+[data-scroll-direction="horizontal"] .c-scrollbar:hover {
+  transform: scaleY(1.3);
+}
+
+.c-scrollbar_thumb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: black;
+  opacity: 0.5;
+  width: 7px;
+  border-radius: 10px;
+  margin: 2px;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+.has-scroll-dragging .c-scrollbar_thumb {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+[data-scroll-direction="horizontal"] .c-scrollbar_thumb {
+  right: auto;
+  bottom: 0;
+}
+.gallery {
+  display: flex;
+  margin-left: 12vw;
+  padding-right: 12vw;
+}
+
+.gallery__item {
+  margin: 0 3vw;
+  display: grid;
+  grid-template-areas:
+    "... ..."
+    "... gallery-image"
+    "... ...";
+  grid-template-columns: 8rem 21vmax;
+  grid-template-rows: 8rem 28vmax 3rem;
+}
+
+.gallery__item:nth-child(even) {
+  padding-top: 10vh;
+}
+
+.gallery__item-img {
+  grid-area: gallery-image;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  transform-origin: 50% 100%;
+}
+
+.gallery__item-imginner {
+  background-size: cover;
+  background-position: 50% 0;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery__item-caption {
+  grid-area: 1 / 1 / 4 / 3;
+  display: grid;
+  grid-template-areas:
+    "gallery-number gallery-title"
+    "gallery-link ..."
+    "gallery-link gallery-tags";
+  grid-template-columns: 8rem auto;
+  grid-template-rows: 8rem auto 3rem;
+}
+
+.gallery__item-number {
+  grid-area: gallery-number;
+  font-size: 6rem;
+  font-size: clamp(2.5rem, 9vw, 6.5rem);
+  justify-self: end;
+  padding-right: 2rem;
+  color: var(--color-gallery-number);
+}
+
+.gallery__item-title {
+  grid-area: gallery-title;
+  margin: 0;
+  font-size: 4rem;
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: var(--color-gallery-title);
+}
+
+.gallery__item-number,
+.gallery__item-title,
+.gallery__text {
+  font-family: moret, serif;
+  font-weight: 800;
+  font-style: italic;
+  align-self: center;
+}
+
+.gallery__item-link {
+  grid-area: gallery-link;
+  align-self: end;
+  font-size: 1.5rem;
+  background: var(--color-gallery-link-bg);
+  color: var(--color-gallery-link);
+  text-decoration: underline;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.gallery__item-link:focus,
+.gallery__item-link:hover {
+  background: var(--color-gallery-link-bg-hover);
+  color: var(--color-gallery-link-hover);
+  text-decoration: none;
+}
+
+.gallery__item-tags {
+  grid-area: gallery-tags;
+  justify-self: end;
+  font-size: 1.5rem;
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 1rem;
+  cursor: pointer;
+}
+
+.gallery__text {
+  font-size: 20vw;
+  line-height: 0.8;
+  margin: 0 10vw 0 14vw;
+  text-transform: lowercase;
+  color: var(--color-gallery-title);
+  color: transparent;
+  -webkit-text-stroke: 1px #978c77;
+  text-stroke: 1px #978c77;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+
+.gallery__text-inner {
+  display: block;
+}

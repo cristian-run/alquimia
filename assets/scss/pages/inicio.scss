@@ -1,0 +1,133 @@
+#banner {
+  position: relative;
+  background: #0031ff;
+  z-index: 1;
+  @include center-all;
+  width: 100vw;
+  video {
+    opacity: 0.4;
+    z-index: -3;
+    position: absolute;
+  }
+  .headline{
+    font-size: 45px;
+    font-weight: 500;
+    line-height: 1;
+  }
+  p{
+    
+    color: #fff;
+  }
+  h2{
+    font-weight: bold;
+    font-size: 125px;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 65px;
+  }
+  &:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(media/images/banner-texture.svg) ;
+    opacity: 0.3;
+    z-index: -1;
+  }
+  &:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 51, 255, 0.4);
+    mix-blend-mode: color;
+    z-index: -2;
+  }
+  .copy, .scroll-text{
+    position: absolute;
+    bottom: 35px;
+    z-index: 2;
+    font-size: 18px;
+    margin-bottom: 0;
+  }
+  .scroll-text{
+    right: 0px;
+    svg{
+      margin-left: 12px;
+      path{
+        stroke-dasharray: 130;
+        // animation: lineAnimation 2.5s infinite linear;
+        @keyframes lineAnimation {
+          to {
+            stroke-dashoffset: -1000;
+          }
+        }
+      }
+    }
+  }
+  .copy{
+    left: 45px;
+  }
+}
+
+#nosotros{
+  .about-group-img{
+    display: grid;
+    gap:25px;
+    height: calc(100vh - 175px);
+  }
+  p{
+    font-size: 20px;
+  }
+}
+
+#servicios{
+  display: flex;
+  padding-right: 12vw;
+  h5{
+    writing-mode: vertical-lr;
+    font-size: 120px;
+    font-weight: bold;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column-reverse;
+    margin: 0 100px 0 0;
+    height: 100%;
+    span{
+      display: block;
+      text-transform: uppercase;
+      &:last-child{
+        margin-top: auto;
+      }
+    }
+  }
+  .services-list{
+    display: flex;
+    gap: 30px;
+  }
+}
+
+
+#contacto{
+  min-width: initial;
+  width: 1000px;
+  
+  background: $blue;
+ h4{
+  writing-mode: vertical-lr;
+  font-size: 120px;
+  font-weight: bold;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column-reverse;
+  margin: 0 100px 0 0;
+  height: 100%;
+  left: -50%;
+    position: relative;
+ }
+}

@@ -1,0 +1,21 @@
+header {
+  top: 0px;
+  width: 94vw;
+  left: 3vw;
+  border-bottom: 1px solid #fff;
+  z-index: 2;
+  padding: 18px 0;
+  color: #fff;
+  min-height: 85px;
+  @include center-vertical;
+  font-size: 18px;
+  mix-blend-mode: difference;
+  position: relative;
+  margin-bottom: -87px;
+  ul{
+    gap: 30px;
+  }
+  .img-contain{
+    height: 58px;
+  }
+}

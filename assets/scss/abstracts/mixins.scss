@@ -1,0 +1,59 @@
+// limitar numero de lineas de texto
+
+@mixin text-overflow {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin text-line-1 {
+  @include text-overflow;
+  -webkit-line-clamp: 1;
+}
+
+@mixin text-line-2 {
+  @include text-overflow;
+  -webkit-line-clamp: 2;
+}
+
+@mixin text-line-3 {
+  @include text-overflow;
+  -webkit-line-clamp: 3;
+}
+
+@mixin text-line-4 {
+  @include text-overflow;
+  -webkit-line-clamp: 4;
+}
+
+
+// modos de centrar elementos
+
+@mixin center-horizontal {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin center-vertical {
+  display: flex;
+  align-items: center;
+}
+
+@mixin center-all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.center-horizontal {
+    @include center-horizontal;
+}
+
+.center-vertical {
+  @include center-vertical;
+}
+.center-all {
+  @include center-all;
+}

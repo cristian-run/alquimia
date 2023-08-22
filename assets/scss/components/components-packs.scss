@@ -1,0 +1,30 @@
+@import 'image-resize';
+@import 'image-resize';
+@import 'buttons';
+@import 'title';
+@import 'service-card';
+@import 'fields';
+@import 'mic';
+
+#magic-cursor {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    pointer-events: none;
+    z-index:1000000;
+  }
+  
+  #ball {
+      position: fixed;
+      display: block;
+      left: 0;
+      top: 0;
+      transform: translate(-50%, -50%);
+      width: 25px;
+      height: 25px;
+      border: .8px solid #fff;
+      border-radius: 50%;
+      pointer-events: none;
+      opacity:.5;
+  
+  }
