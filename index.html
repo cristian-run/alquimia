@@ -7,10 +7,9 @@
     <link rel="shortcut icon" href="favicon.ico" />
     <!-- <link rel="stylesheet" type="text/css" href="css/base.css" /> -->
     <link rel="stylesheet" type="text/css" href="custom.min.css" />
-  
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
   </head>
   <body class="demo-1 loading">
-    
     <div id="magic-cursor">
       <div id="ball"></div>
     </div>
@@ -18,40 +17,73 @@
 			<circle class="cursor__inner" cx="10" cy="10" r="5"/>
 		</svg> -->
     <!-- <div id="toastContainer" class="toast-container position-fixed top-0 end-0 p-3"></div> -->
-   
+
     <main data-scroll-container id="page-wrapper">
-     
       <div class="content">
-        <header data-scroll data-scroll-sticky data-scroll-target="#page-wrapper">
+        <header
+          data-scroll
+          data-scroll-sticky
+          data-scroll-target="#page-wrapper"
+        >
           <nav class="center-vertical justify-content-between w-100">
-            <a class="navbar-brand d-block img-contain" data-value="banner" data-scroll-to href="#banner">
+            <a
+              class="navbar-brand d-block img-contain"
+              data-value="banner"
+              data-scroll-to
+              href="#banner"
+            >
               <img src="media/images/alquimia_logo_s.svg" alt="" />
             </a>
-           
+
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav d-flex">
                 <li class="nav-item" data-scroll>
-                  <a class="nav-link active" data-value="banner" data-scroll-to aria-current="page" href="#banner">Inicio</a>
+                  <a
+                    class="nav-link active"
+                    data-value="banner"
+                    data-scroll-to
+                    aria-current="page"
+                    href="#banner"
+                    >Inicio</a
+                  >
                 </li>
                 <li class="nav-item" data-scroll>
-                  <a class="nav-link" data-value="nosotros" data-scroll-to href="#nosotros">Nosotros</a>
+                  <a
+                    class="nav-link"
+                    data-value="nosotros"
+                    data-scroll-to
+                    href="#nosotros"
+                    >Nosotros</a
+                  >
                 </li>
                 <li class="nav-item" data-scroll>
-                  <a class="nav-link" data-value="servicios" data-scroll-to href="#servicios">Servicios</a>
+                  <a
+                    class="nav-link"
+                    data-value="servicios"
+                    data-scroll-to
+                    href="#servicios"
+                    >Servicios</a
+                  >
                 </li>
                 <li class="nav-item" data-scroll>
-                  <a class="nav-link" data-value="contacto" data-scroll-to href="#contacto">Contacto</a>
+                  <a
+                    class="nav-link"
+                    data-value="contacto"
+                    data-scroll-to
+                    href="#contacto"
+                    >Contacto</a
+                  >
                 </li>
               </ul>
             </div>
           </nav>
         </header>
         <div class="d-flex h-100">
-          <section id="banner"  class="img-fit p-0">
+          <section id="banner" class="img-fit p-0">
             <div class="container">
               <div class="row">
-                <div class="col-md-12">
-                  <p class="text-center headline">Transformamos tus datos en</p>
+                <div class="col-md-12 mb-4">
+                  <p class="text-center headline mb-2">Transformamos tus datos en</p>
 
                   <h2 class="text-center">
                     Soluciones con inteligencia artificial.
@@ -60,41 +92,90 @@
                     <button type="button" class="al-btn primary white me-4">
                       Ver servicios
                     </button>
-                   <div class="mic">
-                    <button class="mic-fire mic-btn" title="Navegación por voz" id="playButton">
-                      <div class="pulse-lines">
-                        <div class="line"></div>
-                        <div class="line"></div>
-                        <div class="line"></div>
-                         <div class="line"></div>
-                      </div>
-                      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-microphone" width="35" height="35" viewBox="0 0 24 24" stroke-width="2" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M9 2m0 3a3 3 0 0 1 3 -3h0a3 3 0 0 1 3 3v5a3 3 0 0 1 -3 3h0a3 3 0 0 1 -3 -3z" />
-                        <path d="M5 10a7 7 0 0 0 14 0" />
-                        <path d="M8 21l8 0" />
-                        <path d="M12 17l0 4" />
-                      </svg>
-                    </button>
-                   </div>
-                   <div class="mic-sticky" data-scroll data-scroll-sticky data-scroll-target="#page-wrapper">
-                    <button class="mic-fire mic-btn" title="Navegación por voz" id="playButtonSticky">
-                      <div class="pulse-lines">
-                        <div class="line"></div>
-                        <div class="line"></div>
-                        <div class="line"></div>
-                         <div class="line"></div>
-                      </div>
-                      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-microphone" width="35" height="35" viewBox="0 0 24 24" stroke-width="2" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M9 2m0 3a3 3 0 0 1 3 -3h0a3 3 0 0 1 3 3v5a3 3 0 0 1 -3 3h0a3 3 0 0 1 -3 -3z" />
-                        <path d="M5 10a7 7 0 0 0 14 0" />
-                        <path d="M8 21l8 0" />
-                        <path d="M12 17l0 4" />
-                      </svg>
-                    </button>
-                   </div>
-                   
+                    <div class="mic">
+                      <button
+                        class="mic-fire mic-btn img-contain"
+                        title="Navegación por voz"
+                        id="playButton"
+                      >
+                      <img src="media/images/copy-voice-nav.svg" alt="" class="copy-nav position-absolute">
+                        <div
+                          id="toastContainer"
+                          class="toast-container position-absolute"
+                        ></div>
+                        <div class="pulse-lines">
+                          <div class="line"></div>
+                          <div class="line"></div>
+                          <div class="line"></div>
+                          <div class="line"></div>
+                        </div>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="icon icon-tabler icon-tabler-microphone"
+                          width="35"
+                          height="35"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="#fff"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                          <path
+                            d="M9 2m0 3a3 3 0 0 1 3 -3h0a3 3 0 0 1 3 3v5a3 3 0 0 1 -3 3h0a3 3 0 0 1 -3 -3z"
+                          />
+                          <path d="M5 10a7 7 0 0 0 14 0" />
+                          <path d="M8 21l8 0" />
+                          <path d="M12 17l0 4" />
+                        </svg>
+                      </button>
+                    </div>
+                    <div
+                      class="mic-sticky"
+                      data-scroll
+                      data-scroll-sticky
+                      data-scroll-target="#page-wrapper"
+                    >
+                      <div
+                        id="toastContainer"
+                        class="toast-container position-absolute"
+                      >
+                    </div>
+                      <button
+                        class="mic-fire mic-btn img-contain"
+                        title="Navegación por voz"
+                        id="playButtonSticky"
+                      ><img src="media/images/copy-voice-nav-black.svg" alt="" class="copy-nav position-absolute">
+                        <div class="pulse-lines">
+                          <div class="line"></div>
+                          <div class="line"></div>
+                          <div class="line"></div>
+                          <div class="line"></div>
+                        </div>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="icon icon-tabler icon-tabler-microphone"
+                          width="35"
+                          height="35"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="#fff"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                          <path
+                            d="M9 2m0 3a3 3 0 0 1 3 -3h0a3 3 0 0 1 3 3v5a3 3 0 0 1 -3 3h0a3 3 0 0 1 -3 -3z"
+                          />
+                          <path d="M5 10a7 7 0 0 0 14 0" />
+                          <path d="M8 21l8 0" />
+                          <path d="M12 17l0 4" />
+                        </svg>
+                      </button>
+                    </div>
+
                     <button type="button" class="al-btn primary white outline">
                       Contactarme
                     </button>
@@ -137,17 +218,31 @@
                 </div>
                 <div class="col-md-6 offset-md-1">
                   <div class="about-group-img">
-                    <div class="img-fit about-img overflow-hidden rounded-3">
-                      <img
-                        src="https://images.unsplash.com/photo-1517181875630-f72350452109?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-                        alt=""
-                      />
+                    <div
+                      data-scroll=""
+                      data-scroll-speed="-2"
+                      data-scroll-direction="vertical"
+                      class="w-100"
+                    >
+                      <div class="img-fit about-img overflow-hidden rounded-3">
+                        <img
+                          src="https://images.unsplash.com/photo-1517181875630-f72350452109?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                          alt=""
+                        />
+                      </div>
                     </div>
-                    <div class="img-fit about-img overflow-hidden rounded-3">
-                      <img
-                        src="https://images.unsplash.com/photo-1603201667141-5a2d4c673378?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1196&q=80"
-                        alt=""
-                      />
+                    <div
+                      data-scroll=""
+                      data-scroll-speed="2"
+                      data-scroll-direction="vertical"
+                      class="w-100"
+                    >
+                      <div class="img-fit about-img overflow-hidden rounded-3">
+                        <img
+                          src="https://images.unsplash.com/photo-1603201667141-5a2d4c673378?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1196&q=80"
+                          alt=""
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -160,182 +255,214 @@
               <span>Servicios</span>
             </h5>
             <div class="services-list">
-              <div class="service-card" id="machine">
-                <span>01</span>
-                <a href="#"
-                  ><h2 class="text-white section-title text-center">
-                    Machine learning
-                  </h2></a
-                >
-                <a href="#" class="img-fit">
-                  <img
-                    src="https://images.unsplash.com/photo-1627645835237-0743e52b991f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80"
-                    alt=""
-                  />
-                </a>
-                <a href="#" class="al-btn primary blue"> Saber más </a>
-                <button class="arrow">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="32"
-                    height="32"
-                    viewBox="0 0 24 24"
-                    stroke-width="2.5"
-                    stroke="#fff"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+              <div
+                class="service-card-container"
+                data-scroll=""
+                data-scroll-speed="1"
+                id="machine"
+              >
+                <div class="service-card">
+                  <span>01</span>
+                  <a href="#"
+                    ><h2 class="text-white section-title text-center">
+                      Machine learning
+                    </h2></a
                   >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M5 12l14 0" />
-                    <path d="M13 18l6 -6" />
-                    <path d="M13 6l6 6" />
-                  </svg>
-                </button>
+                  <a href="#" class="img-fit">
+                    <img
+                      src="https://images.unsplash.com/photo-1627645835237-0743e52b991f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80"
+                      alt=""
+                    />
+                  </a>
+                  <a href="#" class="al-btn primary blue"> Saber más </a>
+                  <button class="arrow">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      stroke-width="2.5"
+                      stroke="#fff"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M5 12l14 0" />
+                      <path d="M13 18l6 -6" />
+                      <path d="M13 6l6 6" />
+                    </svg>
+                  </button>
+                </div>
               </div>
-              <div class="service-card">
-                <span>02</span>
-                <a href="#"
-                  ><h2 class="text-white section-title text-center">
-                    Deep learning
-                  </h2></a
-                >
-                <a href="#" class="img-fit">
-                  <img
-                    src="https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80"
-                    alt=""
-                  />
-                </a>
-                <a href="#" class="al-btn primary blue"> Saber más </a>
-                <button class="arrow">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="32"
-                    height="32"
-                    viewBox="0 0 24 24"
-                    stroke-width="2.5"
-                    stroke="#fff"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+              <div
+                class="service-card-container"
+                data-scroll=""
+                data-scroll-speed="1"
+                id="deep"
+              >
+                <div class="service-card">
+                  <span>02</span>
+                  <a href="#"
+                    ><h2 class="text-white section-title text-center">
+                      Deep learning
+                    </h2></a
                   >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M5 12l14 0" />
-                    <path d="M13 18l6 -6" />
-                    <path d="M13 6l6 6" />
-                  </svg>
-                </button>
+                  <a href="#" class="img-fit">
+                    <img
+                      src="https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80"
+                      alt=""
+                    />
+                  </a>
+                  <a href="#" class="al-btn primary blue"> Saber más </a>
+                  <button class="arrow">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      stroke-width="2.5"
+                      stroke="#fff"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M5 12l14 0" />
+                      <path d="M13 18l6 -6" />
+                      <path d="M13 6l6 6" />
+                    </svg>
+                  </button>
+                </div>
               </div>
-              <div class="service-card">
-                <span>03</span>
-                <a href="#"
-                  ><h2 class="text-white section-title text-center">
-                    Desarrollo de software a la medida
-                  </h2></a
-                >
-                <a href="#" class="img-fit">
-                  <img
-                    src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80"
-                    alt=""
-                  />
-                </a>
-                <a href="#" class="al-btn primary blue"> Saber más </a>
-                <button class="arrow">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="32"
-                    height="32"
-                    viewBox="0 0 24 24"
-                    stroke-width="2.5"
-                    stroke="#fff"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+              <div
+                class="service-card-container"
+                data-scroll=""
+                data-scroll-speed="1"
+                id="software"
+              >
+                <div class="service-card">
+                  <span>03</span>
+                  <a href="#"
+                    ><h2 class="text-white section-title text-center">
+                      Desarrollo de software a la medida
+                    </h2></a
                   >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M5 12l14 0" />
-                    <path d="M13 18l6 -6" />
-                    <path d="M13 6l6 6" />
-                  </svg>
-                </button>
+                  <a href="#" class="img-fit">
+                    <img
+                      src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80"
+                      alt=""
+                    />
+                  </a>
+                  <a href="#" class="al-btn primary blue"> Saber más </a>
+                  <button class="arrow">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      stroke-width="2.5"
+                      stroke="#fff"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M5 12l14 0" />
+                      <path d="M13 18l6 -6" />
+                      <path d="M13 6l6 6" />
+                    </svg>
+                  </button>
+                </div>
               </div>
-              <div class="service-card">
-                <span>04</span>
-                <a href="#"
-                  ><h2 class="text-white section-title text-center">
-                    Diseño y desarrollo web y app
-                  </h2></a
-                >
-                <a href="#" class="img-fit">
-                  <img
-                    src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1036&q=80"
-                    alt=""
-                  />
-                </a>
-                <a href="#" class="al-btn primary blue"> Saber más </a>
-                <button class="arrow">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="32"
-                    height="32"
-                    viewBox="0 0 24 24"
-                    stroke-width="2.5"
-                    stroke="#fff"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+              <div
+                class="service-card-container"
+                data-scroll=""
+                data-scroll-speed="1"
+                id="web"
+              >
+                <div class="service-card">
+                  <span>04</span>
+                  <a href="#"
+                    ><h2 class="text-white section-title text-center">
+                      Diseño y desarrollo web y app
+                    </h2></a
                   >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M5 12l14 0" />
-                    <path d="M13 18l6 -6" />
-                    <path d="M13 6l6 6" />
-                  </svg>
-                </button>
+                  <a href="#" class="img-fit">
+                    <img
+                      src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1036&q=80"
+                      alt=""
+                    />
+                  </a>
+                  <a href="#" class="al-btn primary blue"> Saber más </a>
+                  <button class="arrow">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      stroke-width="2.5"
+                      stroke="#fff"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M5 12l14 0" />
+                      <path d="M13 18l6 -6" />
+                      <path d="M13 6l6 6" />
+                    </svg>
+                  </button>
+                </div>
               </div>
-              <div class="service-card" id="hardware">
-                <span>05</span>
-                <a href="#"
-                  ><h2 class="text-white section-title text-center">
-                    Soluciones por hardware
-                  </h2></a
-                >
-                <a href="#" class="img-fit">
-                  <img
-                    src="https://images.unsplash.com/photo-1602837385569-08ac19ec83af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=326&q=80"
-                    alt=""
-                  />
-                </a>
-                <a href="#" class="al-btn primary blue"> Saber más </a>
-                <button class="arrow">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="32"
-                    height="32"
-                    viewBox="0 0 24 24"
-                    stroke-width="2.5"
-                    stroke="#fff"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+              <div
+                class="service-card-container"
+                data-scroll=""
+                data-scroll-speed="1"
+                id="hardware"
+              >
+                <div class="service-card">
+                  <span>05</span>
+                  <a href="#"
+                    ><h2 class="text-white section-title text-center">
+                      Soluciones por hardware
+                    </h2></a
                   >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M5 12l14 0" />
-                    <path d="M13 18l6 -6" />
-                    <path d="M13 6l6 6" />
-                  </svg>
-                </button>
+                  <a href="#" class="img-fit">
+                    <img
+                      src="https://images.unsplash.com/photo-1602837385569-08ac19ec83af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=326&q=80"
+                      alt=""
+                    />
+                  </a>
+                  <a href="#" class="al-btn primary blue"> Saber más </a>
+                  <button class="arrow">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      stroke-width="2.5"
+                      stroke="#fff"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M5 12l14 0" />
+                      <path d="M13 18l6 -6" />
+                      <path d="M13 6l6 6" />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           </section>
           <section id="contacto">
+            <h4 class="section-title">ESCRÍBENOS</h4>
             <div class="container">
-             
-              <div class="row">
-                <div class="col-md-2">
-                  <h4 class="section-title">ESCRÍBENOS</h4>
-                </div>
-                <div class="col-md-10">
-                  <div class="form__group mb-3">
+              <form class="row">
+                <div class="col-md-12">
+                  <div class="form__group mb-3 mt-0">
                     <input
                       name="user_name"
                       type="text"
@@ -373,9 +500,7 @@
                       id="tel"
                       data-required="true"
                     />
-                    <label for="tel" class="form__label">
-                      Teléfono 
-                    </label>
+                    <label for="tel" class="form__label"> Teléfono </label>
                   </div>
                   <div class="form__group">
                     <input
@@ -391,9 +516,27 @@
                       Nombre de tu producto
                     </label>
                   </div>
-                  <p>Al hacer clic en enviar mensaje, indicas que has leído y aceptas los Términos y condiciones.</p>
+                  <div class="form__group">
+                    <textarea
+                      name="message"
+                      placeholder="Deja un mensaje"
+                      rows="5"
+                      class="form__field"
+                      data-required="true"
+                    ></textarea>
+                    <label for="name" class="form__label">
+                      Deja un mensaje
+                    </label>
+                  </div>
+                  <p class="text-white">
+                    Al hacer clic en enviar mensaje, indicas que has leído y
+                    aceptas los Términos y condiciones.
+                  </p>
+                  <button type="button" class="al-btn primary white w-100">
+                    Enviar formulario
+                  </button>
                 </div>
-              </div>
+              </form>
             </div>
           </section>
         </div>
@@ -405,7 +548,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
     <script src="assets/js/locomotive-scroll.min.js"></script>
-    
+
     <!-- <script type="module" src="assets/js/cursor.js"></script> -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="assets/js/custom.js"></script>

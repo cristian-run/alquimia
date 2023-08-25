@@ -1,21 +1,29 @@
-@import 'footer';
-@import 'header';
+@import "footer";
+@import "header";
+
+
 
 @media (min-width: 1500px) {
-    .container {
-      max-width: 1400px;
-    }
+  .container {
+    max-width: 1400px;
   }
-  
-  @media (max-width: 991px) {
-    .container {
-      max-width: 100%;
-      padding: 0 30px;
-    }
+}
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1500px;
   }
-  
-  @media (max-width: 768px) {
-    .container {
-      padding: 0 20px;
-    }
+}
+
+@media (max-width: 991px) {
+  .container {
+    max-width: 100%;
+    padding: 0 30px;
   }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+}

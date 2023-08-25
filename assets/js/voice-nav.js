@@ -2,19 +2,51 @@ const scroller = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true,
   direction: "horizontal",
+  // offset: [0, "70%"]
 });
 
-
-scroller.on('scroll', (instance) => {
-  var windowWidth = ($(window).width() / 2) - 50;
+scroller.on("scroll", (instance) => {
+  var windowWidth = $(window).width() / 2 - 50;
   if (instance.scroll.x >= windowWidth) {
-    $('.mic-sticky').addClass('show-mic');
-    $('.mic').addClass('hide-mic');
+    $(".mic-sticky").addClass("show-mic");
+    $(".mic").addClass("hide-mic");
   } else {
-    $('.mic-sticky').removeClass('show-mic');
-    $('.mic').removeClass('hide-mic');
+    $(".mic-sticky").removeClass("show-mic");
+    $(".mic").removeClass("hide-mic");
   }
-})
+});
+
+var randomNumber = function randomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};
+
+var clamp = function clamp(num, min, max) {
+  return num <= min ? min : num >= max ? max : num;
+};
+
+var map = function map(x, a, b, c, d) {
+  return (x - a) * (d - c) / (b - a) + c;
+};
+
+const elems = [...document.querySelectorAll('.service-card-container')];
+const initialTranslationArr = Array.from({ length: elems.length }, () => randomNumber(100, 100));
+const translationArr = Array.from({ length: elems.length }, () => 0); // Elements start at their original position
+
+scroller.on('scroll', (obj) => {
+  for (const key of Object.keys(obj.currentElements)) {
+    const el = obj.currentElements[key].el;
+    const idx = elems.indexOf(el);
+    if (obj.currentElements[key].el.classList.contains('service-card-container')) {
+      let progress = obj.currentElements[key].progress;
+      const translationVal = clamp(map(progress, 0, 0.5, initialTranslationArr[idx], translationArr[idx]), translationArr[idx], initialTranslationArr[idx]);
+      obj.currentElements[key].el.style.transform = `translateY(${translationVal}%) `;
+      obj.currentElements[key].el.style.transform = `opacity(${initialTranslationArr[idx]}) `;
+    }
+  }
+});
+
+// scroller.update();
+
 
 /**
  * @license
@@ -45,15 +77,17 @@ const words = {
       "service",
       "services",
       "servicios",
-      "dip",
-      "deep",
       "soluciones",
     ],
     redirect,
   ],
+  machine: [["machine"], redirect],
+  deep: [["deep", "dip"], redirect],
+  web: [["web", "diseño", "aplicaciones", "app"], redirect],
+  software: [["desarrollo", "software"], redirect],
   hardware: [["hardware"], redirect],
   contacto: [["contacto", "contactar", "contactenos"], redirect],
-  detener: [["detener", "tener", "finalizar"], stopVoiceDetection],
+  detener: [["detener", "tener", "finalizar", "apagar"], stopVoiceDetection],
 };
 
 /**
@@ -64,7 +98,7 @@ const words = {
 
 function redirect(path) {
   const target = document.querySelector("#" + path);
-  scroller.scrollTo(target);
+  scroller.scrollTo(target, -200);
 }
 
 /**
@@ -106,41 +140,49 @@ function initVoiceDetection() {
       window.webkitSpeechRecognition)();
     recognition.continuous = true; // Reconocimiento continuo
     recognition.interimResults = true; // Resultados provisionales
-    // Establecer el idioma deseado
-    recognition.lang = "es-ES"; // Idioma español de España
+    recognition.lang = "es-ES";
+
     // Evento que se dispara cuando se detecta una nueva palabra
     recognition.onresult = (event) => {
       const results = event.results;
+      const transcriptPhrases = results[results.length - 1][0].transcript;
+      console.log("Frase, " + results[results.length - 1][0].transcript);
+      console.log("Frase, " + transcriptPhrases);
+      showMessage(transcriptPhrases);
+
       let transcript = results[results.length - 1][0].transcript
         .trim()
         .split(" ");
+
       transcript = transcript[transcript.length - 1];
       transcript = convertToLowerCaseAndRemoveAccents(transcript);
-      console.log(transcript);
       const matchingKey = findMatchingKey(transcript);
 
       // Ejecutamos la función con la nueva palabra
-      if (matchingKey !== null && lastWord != matchingKey) {
-        showMessage(`Comando detectado: ${matchingKey}`, "ok");
-        if (words[matchingKey] && words[matchingKey][1]) {
-          words[matchingKey][1](matchingKey);
+      setTimeout(() => {
+        if (matchingKey !== null && lastWord != matchingKey) {
+          // showMessage(`${matchingKey}`, "ok");
+          if (words[matchingKey] && words[matchingKey][1]) {
+            words[matchingKey][1](matchingKey);
+            
+          }
+          lastWord = matchingKey;
+        } else{
+          console.log('otras palabra')
+          // showMessage(`Prueba con otras palabras como desarrollo web o contacto`, "ok");
         }
-
-        lastWord = matchingKey;
-      }
+      }, 600)
     };
 
     // Comenzar el reconocimiento de voz
-    // showStopButton();
     lastWord = null;
     recognition.start();
-    showMessage("Reconocimiento de voz iniciado", "ok");
+    showMessage("Di qué estas buscando", "ok");
 
     // Evento de error
     recognition.onerror = (event) => {
       recognition = null;
       showMessage(`Error en el reconocimiento de voz: ${event.error}`, "error");
-      // showPlayButton();
     };
 
     recognition.onend = (event) => {
@@ -149,16 +191,18 @@ function initVoiceDetection() {
       //     initVoiceDetection();
       //   }
       recognition = null;
-      showMessage("Fin de reconocimiento de voz", "warning");
+      $(".mic-fire").removeClass("active");
+      showMessage("Dejare de escuchar, bye", "warning");
+      
       stopVoiceDetection();
     };
   } else {
     recognition = null;
+
     showMessage(
       "El reconocimiento de voz no es compatible con este navegador.",
       "error"
     );
-    // showPlayButton();
   }
 }
 
@@ -167,8 +211,8 @@ function initVoiceDetection() {
  */
 function stopVoiceDetection() {
   if (recognition) {
+    $(".mic-fire").removeClass("active");
     recognition.stop();
-    $(".mic-fire").removeClass('active')
     recognition = null;
   }
 }
@@ -176,80 +220,84 @@ function stopVoiceDetection() {
 /**
  * Muestra una notificación toast con contenido HTML y un ícono según el tipo.
  *
- * @param {string} htmlContent - El contenido HTML para mostrar en la notificación.
+ * @param {string} text - El texto para mostrar en la notificación.
  * @param {string} type - El tipo de notificación ('alert', 'warning' o 'ok').
  */
 function showMessage(text, type) {
   // Obtener el contenedor de las notificaciones toast
-  const toastContainer = $("#toastContainer");
+  const toastContainer = $(".toast-container");
+
+  const toast = $("<div>", {
+    class: "toast show clickable",
+    role: "alert",
+    "aria-live": "assertive",
+    "aria-atomic": "true",
+  });
+
+  const existingToast = $(".toast");
+  const bsToasts = [];
 
   // Ocultar la notificación toast activa, si existe
   if (activeToast) {
     activeToast.hide();
   }
 
-  // Crear un elemento div para la notificación toast usando jQuery
-  const toast = $("<div>", {
-    class: "toast show clickable", // Clases para la notificación toast
-    role: "alert",
-    "aria-live": "assertive",
-    "aria-atomic": "true",
+  existingToast.each(function () {
+    const bsToast = new bootstrap.Toast(this, {
+      delay: 2500,
+      animation: true,
+      autohide: true,
+    });
+
+    bsToasts.push(bsToast);
+
+    // Cerrar el toast cuando se hace clic en él
+    $(this).on("click", function () {
+      bsToast.hide();
+    });
+
+    bsToast.show();
   });
 
-  // Crear un elemento i para el icono de FontAwesome usando jQuery
-  const toastIcon = $("<i>", {
-    class: `fas mr-2 ${
-      type === "alert"
-        ? "fa-exclamation-triangle text-danger"
-        : type === "warning"
-        ? "fa-exclamation-circle text-warning"
-        : "fa-check-circle text-success"
-    }`,
-  });
+  if (existingToast.length > 0) {
+    console.log("funciona");
+    const toastBody = existingToast.find(".toast-body");
+    toastBody.text(text);
+  } else {
+    const toastBody = $("<div>", {
+      class: "toast-body",
+      text: text,
+    });
 
-  // Crear un elemento div para el cuerpo de la notificación toast usando jQuery
-  const toastBody = $("<div>", {
-    class: "toast-body",
-    text: text, // Establecer el texto de la notificación
-  });
+    toast.append(toastBody);
+    toastContainer.append(toast);
 
-  // Agregar el icono al inicio del cuerpo de la notificación
-  toastBody.prepend(toastIcon);
+    const bsToast = new bootstrap.Toast(toast[0], {
+      delay: 2500,
+      animation: true,
+      autohide: true,
+    });
 
-  // Agregar el cuerpo de la notificación al elemento de la notificación
-  toast.append(toastBody);
+    bsToast.show();
 
-  // Agregar la notificación al contenedor de las notificaciones
-  toastContainer.append(toast);
+    toast.on("click", function () {
+      bsToast.hide();
+    });
 
-  // Crear una instancia de bootstrap.Toast para la notificación toast
-  const bsToast = new bootstrap.Toast(toast[0], {
-    delay: 2000, // Establecer la duración en milisegundos
-    animation: true,
-    autohide: true,
-  });
-
-  // Mostrar la notificación toast
-  bsToast.show();
-
-  // Cerrar el toast cuando se hace clic en él
-  toast.on("click", function () {
-    bsToast.hide();
-  });
-
-  // Almacenar la instancia de la notificación toast activa
-  activeToast = bsToast;
+    activeToast = bsToast;
+  }
 }
 
+
 $(".mic-fire").on("click", function () {
-  if ($('.mic-fire').hasClass("active")) {
+  if ($(".mic-fire").hasClass("active")) {
     // recognition = null;
     console.log("stop");
     stopVoiceDetection();
-    $('.mic-fire').removeClass("active");
+    $(".mic-fire").removeClass("active");
   } else {
     console.log("play");
-    $('.mic-fire').addClass("active");
+    $(".mic-fire").addClass("active");
     initVoiceDetection();
   }
 });

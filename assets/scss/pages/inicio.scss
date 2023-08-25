@@ -9,16 +9,15 @@
     z-index: -3;
     position: absolute;
   }
-  .headline{
+  .headline {
     font-size: 45px;
     font-weight: 500;
     line-height: 1;
   }
-  p{
-    
+  p {
     color: #fff;
   }
-  h2{
+  h2 {
     font-weight: bold;
     font-size: 125px;
     line-height: 1;
@@ -33,7 +32,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background: url(media/images/banner-texture.svg) ;
+    background: url(media/images/banner-texture.svg);
     opacity: 0.3;
     z-index: -1;
   }
@@ -48,18 +47,19 @@
     mix-blend-mode: color;
     z-index: -2;
   }
-  .copy, .scroll-text{
+  .copy,
+  .scroll-text {
     position: absolute;
     bottom: 35px;
     z-index: 2;
     font-size: 18px;
     margin-bottom: 0;
   }
-  .scroll-text{
+  .scroll-text {
     right: 0px;
-    svg{
+    svg {
       margin-left: 12px;
-      path{
+      path {
         stroke-dasharray: 130;
         // animation: lineAnimation 2.5s infinite linear;
         @keyframes lineAnimation {
@@ -70,26 +70,40 @@
       }
     }
   }
-  .copy{
+  .copy {
     left: 45px;
   }
 }
 
-#nosotros{
-  .about-group-img{
+#nosotros {
+  .about-group-img {
     display: grid;
-    gap:25px;
-    height: calc(100vh - 175px);
+    // gap: 25px;
+    // height: calc(100vh - 175px);
+    grid-template-rows: 50% 50%;
+    .about-img{
+      height: calc(50vh - 100px);
+    }
+    > div{
+      .about-img{
+        top: 60px;
+      }
+      &:nth-child(2){
+        .about-img{
+          top: -60px;
+        }
+      }
+    }
   }
-  p{
+  p {
     font-size: 20px;
   }
 }
 
-#servicios{
+#servicios {
   display: flex;
   padding-right: 12vw;
-  h5{
+  h5 {
     writing-mode: vertical-lr;
     font-size: 120px;
     font-weight: bold;
@@ -98,36 +112,39 @@
     flex-direction: column-reverse;
     margin: 0 100px 0 0;
     height: 100%;
-    span{
+    span {
       display: block;
       text-transform: uppercase;
-      &:last-child{
+      &:last-child {
         margin-top: auto;
       }
     }
   }
-  .services-list{
+  .services-list {
     display: flex;
     gap: 30px;
   }
 }
 
-
-#contacto{
+#contacto {
   min-width: initial;
-  width: 1000px;
-  
+  width: 1100px;
   background: $blue;
- h4{
-  writing-mode: vertical-lr;
-  font-size: 120px;
-  font-weight: bold;
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column-reverse;
-  margin: 0 100px 0 0;
-  height: 100%;
-  left: -50%;
-    position: relative;
- }
+  position: relative;
+  h4 {
+    writing-mode: vertical-lr;
+    font-size: 120px;
+    font-weight: bold;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column-reverse;
+    margin: 0 100px 0 0;
+    left: 0;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -45%);
+  }
+  .container {
+    max-width: 500px;
+  }
 }
