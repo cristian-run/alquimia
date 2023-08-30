@@ -1,4 +1,4 @@
-const scroller = new LocomotiveScroll({
+export const scroller = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true,
   direction: "horizontal",
@@ -14,6 +14,14 @@ scroller.on("scroll", (instance) => {
     $(".mic-sticky").removeClass("show-mic");
     $(".mic").removeClass("hide-mic");
   }
+});
+
+$(".service-card").on("click", function() {
+  if ($(this).hasClass("expanded")) {
+  } else {
+    $(this).addClass("expanded");
+  }
+  scroller.start()
 });
 
 var randomNumber = function randomNumber(min, max) {

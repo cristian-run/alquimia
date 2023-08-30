@@ -1,4 +1,11 @@
+import { scroller } from './voice-nav.js';
 
+
+
+$(".arrow").on("click", function(e) {
+    e.stopPropagation();
+    $(this).parent().removeClass("expanded");
+});
 
 // Initialize Locomotive Scroll (horizontal direction)
 
