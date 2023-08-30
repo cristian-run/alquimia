@@ -1,3 +1,24 @@
+//menu mobile//
+
+  $(".menu-btn").on("click", function () {
+    $(this).toggleClass("close");
+    $(".navbar-collapse").toggleClass("show-menu");
+  });
+  
+  $(".navbar-collapse a").on("click", function () {
+    $(".navbar-collapse").removeClass("show-menu");
+    $(".menu-btn").removeClass("close");
+  });
+  
+  $("body").on("click", function () {
+    $(".navbar-collapse").removeClass("show-menu");
+  });
+  
+  $(".menu-btn , .navbar-collapse").on("click", function (e) {
+    e.stopPropagation();
+  });
+
+
 // $(window).bind("mousewheel", function (e) {
 
 //   // Determinar la dirección del scroll
@@ -9,10 +30,6 @@
 //   // Aplicar el desplazamiento horizontal al elemento main
 //   $("main").scrollLeft($("main").scrollLeft() + scrollAmount);
 // });
-
-
-
-
 
 {
   let mouse = { x: 0, y: 0 }; //Cursor position

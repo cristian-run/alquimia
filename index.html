@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -27,7 +27,7 @@
         >
           <nav class="center-vertical justify-content-between w-100">
             <a
-              class="navbar-brand d-block img-contain"
+              class="navbar-brand d-block img-contain logo"
               data-value="banner"
               data-scroll-to
               href="#banner"
@@ -76,13 +76,18 @@
                 </li>
               </ul>
             </div>
+            <button class="menu-btn">
+              <div></div>
+              <div></div>
+              <div></div>
+          </button>
           </nav>
         </header>
-        <div class="d-flex h-100">
+        <div class="section_container" >
           <section id="banner" class="img-fit p-0">
             <div class="container">
               <div class="row">
-                <div class="col-md-12 mb-4">
+                <div class="col-md-12 mb-4 banner_container">
                   <p class="text-center headline mb-2">Transformamos tus datos en</p>
 
                   <h2 class="text-center">
@@ -294,7 +299,7 @@
                     </svg>
                   </button>
                 </div>
-                <div class="summary-service">
+                <div class="summary-service d-none">
                   <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus saepe, laboriosam reiciendis harum, unde iusto quia porro enim similique, quibusdam molestiae blanditiis eius numquam! Doloribus similique soluta iste cumque hic!</p>
                   <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus saepe, laboriosam reiciendis harum, unde iusto quia porro enim similique, quibusdam molestiae blanditiis eius numquam! Doloribus similique soluta iste cumque hic!</p>
                   <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus saepe, laboriosam reiciendis harum, unde iusto quia porro enim similique, quibusdam molestiae blanditiis eius numquam! Doloribus similique soluta iste cumque hic!</p>
@@ -467,7 +472,7 @@
             <h4 class="section-title">ESCRÍBENOS</h4>
             <div class="container">
               <form class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 form__container">
                   <div class="form__group mb-3 mt-0">
                     <input
                       name="user_name"
@@ -526,7 +531,7 @@
                     <textarea
                       name="message"
                       placeholder="Deja un mensaje"
-                      rows="5"
+                      rows="4"
                       class="form__field"
                       data-required="true"
                     ></textarea>
@@ -558,7 +563,8 @@
     <!-- <script type="module" src="assets/js/cursor.js"></script> -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     
-    <script src="assets/js/voice-nav.js"></script>
+    <script type="module" src="assets/js/voice-nav.js"></script>
+    <script type="module" src="assets/js/scroll.js"></script>
     <script src="assets/js/custom.js"></script>
     <script type="module" src="assets/js/index.js"></script>
   </body>

@@ -10,5 +10,17 @@ body{
 }
 
 main{
+   @media (min-width:768px){
     height: 100vh;
+   }
+    // @media(max-width:768px){
+    //     height: auto;
+    // }
+}
+
+.section_container{
+    @media(min-width:768px){
+       display: flex;
+       height: 100%;
+    }
 }

@@ -4,6 +4,9 @@
   z-index: 1;
   @include center-all;
   width: 100vw;
+  @media(max-width:768px){
+    min-height: 110vh;
+  }
   video {
     opacity: 0.4;
     z-index: -3;
@@ -13,6 +16,9 @@
     font-size: 45px;
     font-weight: 500;
     line-height: 1;
+    @media(max-width:768px){
+      font-size: 25px;
+    }
   }
   p {
     color: #fff;
@@ -24,6 +30,16 @@
     color: #fff;
     text-align: center;
     margin-bottom: 65px;
+    @media(max-width:1400px){
+      font-size: 85px;
+      margin-bottom: 22px;
+    }
+    @media(max-width:768px){
+      font-size: 60px;
+    }
+    @media(max-width:480px){
+      font-size: 50px;
+    }
   }
   &:before {
     content: "";
@@ -54,6 +70,12 @@
     z-index: 2;
     font-size: 18px;
     margin-bottom: 0;
+    @media(max-width:1400px){
+      bottom: 20px;
+    }
+    @media(max-width:768px){
+      font-size: 15px;
+    }
   }
   .scroll-text {
     right: 0px;
@@ -69,9 +91,38 @@
         }
       }
     }
+    @media(max-width:768px){
+      transform: rotate(90deg) translate(-92px, -123px);
+    }
   }
   .copy {
     left: 45px;
+    @media(max-width:480px){
+      left: 20px;
+      right: 39px;
+    }
+  }
+
+  .center-all{
+    @media(max-width:768px){
+      
+    }
+    @media(max-width:578px){
+      flex-direction: column;
+      .al-btn{
+        margin-bottom: 20px;
+        margin-right: 0px !important;
+      }
+    }
+  }
+}
+
+.banner_container{
+  @media(max-width:1400px) and (min-width:768px){
+    margin-top: -55px; 
+  }
+  @media(max-width:768px){
+    margin-top: -30px;
   }
 }
 
@@ -87,22 +138,37 @@
     > div{
       .about-img{
         top: 60px;
+        @media(max-width:1400px){
+          top: 40px;
+        }
       }
       &:nth-child(2){
         .about-img{
           top: -60px;
+          @media(max-width:1400px){
+            top: -40px;
+          }
         }
       }
     }
   }
   p {
     font-size: 20px;
+    @media(max-width: 1400px){
+      font-size: 18px;
+    }
   }
 }
 
 #servicios {
   display: flex;
   padding-right: 12vw;
+  @media(max-width:768px){
+    flex-direction: column;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 120px;
+  }
   h5 {
     writing-mode: vertical-lr;
     font-size: 120px;
@@ -112,6 +178,13 @@
     flex-direction: column-reverse;
     margin: 0 100px 0 0;
     height: 100%;
+    @media(max-width:768px){
+      writing-mode: horizontal-tb;
+      font-size: 48px;
+      margin: 0;
+      height: auto;
+      align-items: center;
+    }
     span {
       display: block;
       text-transform: uppercase;
@@ -123,6 +196,9 @@
   .services-list {
     display: flex;
     gap: 38px;
+    @media(max-width:768px){
+      flex-direction: column;
+    }  
   }
 }
 
@@ -131,6 +207,9 @@
   width: 1100px;
   background: $blue;
   position: relative;
+  @media(max-width:768px){
+    width: 100%;
+  }
   h4 {
     writing-mode: vertical-lr;
     font-size: 120px;
@@ -143,6 +222,17 @@
     top: 50%;
     position: absolute;
     transform: translate(-50%, -45%);
+    @media(max-width:768px){
+      writing-mode: horizontal-tb;
+      font-size: 48px;
+      margin: 0;
+      height: auto;
+      align-items: center;
+      left: 50%;
+      top: 0%;
+      position: absolute;
+      transform: translate(-50%, -65%);
+    }
   }
   .container {
     max-width: 500px;

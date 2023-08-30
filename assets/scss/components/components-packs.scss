@@ -12,6 +12,9 @@
     height: 30px;
     pointer-events: none;
     z-index:1000000;
+    @media (max-width:768px){
+        display: none;
+    }
   }
   
   #ball {
