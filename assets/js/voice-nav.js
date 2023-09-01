@@ -135,6 +135,7 @@ function initVoiceDetection() {
     recognition.onerror = (event) => {
       recognition = null;
       showMessage(`Error en el reconocimiento de voz: ${event.error}`, "error");
+      stopVoiceDetection();
     };
 
     recognition.onend = (event) => {

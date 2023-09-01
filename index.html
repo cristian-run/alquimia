@@ -83,31 +83,22 @@
           </button>
           </nav>
         </header>
-        <div class="section_container" >
-          <section id="banner" class="img-fit p-0">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-12 mb-4 banner_container">
-                  <p class="text-center headline mb-2">Transformamos tus datos en</p>
-
-                  <h2 class="text-center">
-                    Soluciones con inteligencia artificial.
-                  </h2>
-                  <div class="center-all">
-                    <button type="button" class="al-btn primary white me-4">
-                      Ver servicios
-                    </button>
-                    <div class="mic">
+        <div
+                      class="mic-sticky"
+                      data-scroll
+                      data-scroll-sticky
+                      data-scroll-target="#page-wrapper"
+                    >
+                      <div
+                        id="toastContainer"
+                        class="toast-container position-absolute"
+                      >
+                    </div>
                       <button
                         class="mic-fire mic-btn img-contain"
                         title="Navegación por voz"
-                        id="playButton"
-                      >
-                      <img src="media/images/copy-voice-nav.svg" alt="" class="copy-nav position-absolute">
-                        <div
-                          id="toastContainer"
-                          class="toast-container position-absolute"
-                        ></div>
+                        id="playButtonSticky"
+                      ><img src="media/images/copy-voice-nav-black.svg" alt="" class="copy-nav position-absolute">
                         <div class="pulse-lines">
                           <div class="line"></div>
                           <div class="line"></div>
@@ -136,22 +127,31 @@
                         </svg>
                       </button>
                     </div>
-                    <div
-                      class="mic-sticky"
-                      data-scroll
-                      data-scroll-sticky
-                      data-scroll-target="#page-wrapper"
-                    >
-                      <div
-                        id="toastContainer"
-                        class="toast-container position-absolute"
-                      >
-                    </div>
+        <div class="section_container" >
+          <section id="banner" class="img-fit p-0">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12 mb-4 banner_container">
+                  <p class="text-center headline mb-2">Transformamos tus datos en</p>
+
+                  <h2 class="text-center">
+                    Soluciones con inteligencia artificial.
+                  </h2>
+                  <div class="center-all">
+                    <button type="button" class="al-btn primary white me-4">
+                      Ver servicios
+                    </button>
+                    <div class="mic">
                       <button
                         class="mic-fire mic-btn img-contain"
                         title="Navegación por voz"
-                        id="playButtonSticky"
-                      ><img src="media/images/copy-voice-nav-black.svg" alt="" class="copy-nav position-absolute">
+                        id="playButton"
+                      >
+                      <img src="media/images/copy-voice-nav.svg" alt="" class="copy-nav position-absolute">
+                        <div
+                          id="toastContainer"
+                          class="toast-container position-absolute"
+                        ></div>
                         <div class="pulse-lines">
                           <div class="line"></div>
                           <div class="line"></div>
@@ -225,8 +225,7 @@
                   <div class="about-group-img">
                     <div
                       data-scroll=""
-                      data-scroll-speed="-2"
-                      data-scroll-direction="vertical"
+                      
                       class="w-100"
                     >
                       <div class="img-fit about-img overflow-hidden rounded-3">
@@ -238,8 +237,7 @@
                     </div>
                     <div
                       data-scroll=""
-                      data-scroll-speed="2"
-                      data-scroll-direction="vertical"
+                      
                       class="w-100"
                     >
                       <div class="img-fit about-img overflow-hidden rounded-3">

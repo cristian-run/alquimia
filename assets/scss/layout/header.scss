@@ -36,8 +36,12 @@ header {
     padding: 11px;
     left: 0vw;
     width: 100vw;
-    
+    transition: background 0.2s;
+  }
+
+  &.sticky-header{
     background: $blue;
+    transition: background 0.2s;
   }
 }
 .menu-btn {

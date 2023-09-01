@@ -55,10 +55,11 @@
     bottom: 0;
     opacity: 0;
     visibility: hidden;
-    position: absolute;
+    position: fixed;
     bottom: 60px;
     left: 40px;
     transition: opacity 0.1s, bottom 0.2s;
+    z-index:99;
    .mic-btn{
     width: 70px;
     height: 70px;
@@ -92,9 +93,14 @@
         bottom: 40px;
         opacity: 1;
         visibility: visible;
-       
+        
+        @media (max-width:991px){
+          left:calc(50% - 35px);
+          bottom: initial;
+          top:calc(100vh - 180px);
+        }
     }
-    
+   
 }
 
 .mic-btn {
